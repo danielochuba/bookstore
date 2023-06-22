@@ -1,0 +1,25 @@
+function BookCard() {
+    return (
+        <div className="card">
+           <div className="bookDescription">
+                <span className="bookType">Action</span>
+                <h2 className="bookTitle">The Hunger Games</h2>
+                <span className="bookAuthor">Suzzane Collins</span>
+                <div className="ctaButtons">
+                    <button className="btn comments">Coments</button>
+                    <button className=" btn remove">Remove</button>
+                    <button className=" btn edit">Edit</button>
+                </div>
+            </div> 
+           <div className="bookCompletion">
+                <span className="progressMeter">spinner</span>
+                <span className="progressCount">64% <small className="complete">Completed</small></span>
+            </div> 
+           <div className="userProgress">
+                <span></span>
+            </div> 
+        </div>
+    )
+}
+
+export default BookCard;
