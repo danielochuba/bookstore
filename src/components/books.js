@@ -1,8 +1,14 @@
+import BookForm from "./bookInput";
+import BookCard from "./book";
 
 
 const Home = () => {
     return (
-        <h1>Hello home</h1>
+        <>
+        <BookCard />
+        <BookForm />
+        </>
+        
     )
 }
 

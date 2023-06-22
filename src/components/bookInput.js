@@ -10,6 +10,9 @@ function BookForm() {
   }
 
   return (
+    <>
+    
+    <h2>ADD NEW BOOK</h2>
     <form onSubmit={ handleSubmit }>
       <label>
         <input
@@ -27,7 +30,9 @@ function BookForm() {
           onChange={(e) => setAuthor(e.target.value)}
         />
       </label>
+      <button type='submit' onClick={handleSubmit}>ADD BOOK</button>
     </form>
+    </>
   )
 }
 
