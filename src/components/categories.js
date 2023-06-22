@@ -1,7 +1,5 @@
-const Categories = () => {
-    return (
-        <h1>Hello CATEGORIES</h1>
-    )
-}
+const Categories = () => (
+  <h1>Hello CATEGORIES</h1>
+);
 
 export default Categories;

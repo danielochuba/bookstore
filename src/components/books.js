@@ -1,15 +1,12 @@
-import BookForm from "./bookInput";
-import BookCard from "./book";
+import BookForm from './bookInput';
+import BookCard from './book';
 
+const Home = () => (
+  <>
+    <BookCard />
+    <BookForm />
+  </>
 
-const Home = () => {
-    return (
-        <>
-        <BookCard />
-        <BookForm />
-        </>
-        
-    )
-}
+);
 
 export default Home;
