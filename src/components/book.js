@@ -16,7 +16,9 @@ function BookCard() {
                 <span className="progressCount">64% <small className="complete">Completed</small></span>
             </div> 
            <div className="userProgress">
-                <span></span>
+                <span className="chapterText">CURRENT CHAPTER</span>
+                <span className="currentChapter">Chapter 17</span>
+                <button className="updtProgBtn">UPDATE PROGRESS</button>
             </div> 
         </div>
     )
