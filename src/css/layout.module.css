@@ -1,0 +1,28 @@
+.appHeader {
+ display: flex;
+ align-items: center;
+ padding-left: 6.5rem;
+ border-radius: 5px;
+ border: 1px solid rgb(246, 234, 234);
+ box-shadow: 0 4px 14px 0 rgba(70, 70, 70, 0.38);
+}
+
+.titleText {
+    color: dodgerblue;
+    font-size: 20px;
+    margin-right: 4%;
+    line-height: 2.313rem;
+    font-weight: 700;
+    font-family: Poppins , Arial, Helvetica, sans-serif
+}
+
+.navLinks > a {
+    margin: 10px;
+    font-weight: 600;
+    color: gray;
+    text-decoration: none;
+}
+
+.disable {
+    color: rgb(199, 191, 191) !important;
+}
