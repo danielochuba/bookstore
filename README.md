@@ -108,7 +108,8 @@ or a web-hosting platform of your choice.
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- **[ Where your ideas take us!! ]**
+- **[ Connect API to app ]**
+- **[ Add styling to improve UI ]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
