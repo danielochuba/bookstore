@@ -14,7 +14,7 @@ const Home = () => {
       id={book.item_id}
     />
   ));
-  console.log(allBooks);
+
   return (
     <>
       {allBooks}
