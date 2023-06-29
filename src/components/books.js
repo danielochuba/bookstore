@@ -7,13 +7,9 @@ import { fetchBooks } from '../redux/books/booksSlice';
 const Home = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.book.books);
-  // const status = useSelector((state) => state.book.status);
+  const status = useSelector((state) => state.book.status);
   const error = useSelector((state) => state.book.error);
   const loading = useSelector((state) => state.book.loading);
-
-  // const handleRemoveBook = (id) => {
-  //   dispatch(deleteBook(id));
-  // };
 
   useEffect(() => {
     dispatch(fetchBooks());
@@ -26,6 +22,14 @@ const Home = () => {
   if (error) {
     return <div>{error}</div>;
   }
+
+  if (status === 'succeeded' && books.length === 0) {
+    return <div>No books to display</div>;
+  }
+  if (status) {
+    return <div>Something went wrong</div>;
+  }
+
   const mappedBooks = books.map((book) => (
     <BookCard
       title={book.title}

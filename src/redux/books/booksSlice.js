@@ -3,8 +3,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
 import ApiBooks from '../booksApI';
 
-// import axios from 'axios';
-
 const initialState = {
   loading: false,
   books: [],
@@ -35,14 +33,7 @@ export const deleteBook = createAsyncThunk('books/deleteBook', async (id) => {
 const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    // addBooks: (state, action) => {
-    //   state.books.push(action.payload);
-    // },
-    // removeBook: (state, action) => {
-    //   state.books = state.books.filter((book) => book.item_id !== action.payload);
-    // },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.loading = true;
