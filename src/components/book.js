@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBook } from '../redux/books/booksSlice';
 
 function BookCard({
   title, author, id, category,
@@ -15,7 +15,7 @@ function BookCard({
         <span className="bookAuthor">{author}</span>
         <div className="ctaButtons">
           <button type="button" className="btn comments">Coments</button>
-          <button type="button" onClick={() => { dispatch(removeBook(id)); }} className=" btn remove">Remove</button>
+          <button type="button" onClick={() => { dispatch(deleteBook(id)); }} className=" btn remove">Remove</button>
           <button type="button" className=" btn edit">Edit</button>
         </div>
       </div>

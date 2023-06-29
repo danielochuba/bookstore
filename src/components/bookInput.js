@@ -1,18 +1,43 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { addBooks } from '../redux/books/booksSlice';
+import { addBook } from '../redux/books/booksSlice';
 
 function BookForm() {
   const [name, setName] = useState('');
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
+  const bookCategories = [
+    'Fiction',
+    'Nonfiction',
+    'Mystery',
+    'Thriller',
+    'Romance',
+    'Science Fiction',
+    'Fantasy',
+    'Biography',
+    'Self-Help',
+    'Historical',
+    'Horror',
+    'Poetry',
+    'Business',
+    'Cooking',
+    'Travel',
+    'Art',
+    'Health',
+  ];
+
+  const randomCategory = () => bookCategories[Math.floor(Math.random() * bookCategories.length)];
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addBooks({ title: name, author, item_id: uuidv4() }));
-    setName('');
-    setAuthor('');
+    if (name.trim() && author.trim()) {
+      dispatch(addBook({
+        title: name, author, item_id: uuidv4(), category: randomCategory(),
+      }));
+      setName('');
+      setAuthor('');
+    }
   };
 
   return (
@@ -26,6 +51,7 @@ function BookForm() {
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
+          required
         />
 
         <input
@@ -33,6 +59,7 @@ function BookForm() {
           type="text"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
+          required
         />
 
         <button type="submit" onClick={handleSubmit}>ADD BOOK</button>
