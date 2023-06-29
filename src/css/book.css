@@ -1,0 +1,37 @@
+.card {
+    display: flex;
+    border: 1px solid #ccc;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.bookType {
+  margin: 0;
+}
+
+.bookTitle {
+  margin: 0;
+}
+
+.bookAuthor {
+ color: dodgerblue;
+}
+
+.ctaButtons {
+    display: flex;
+    column-gap: 9px;
+    align-items: baseline;
+}
+
+.ctaButtons > .btn {
+    border: none;
+    background-color: aliceblue;
+    color: do
+    
+}
+
+.progressCount, .userProgress {
+    display: flex;
+    flex-direction: column;
+}
+
