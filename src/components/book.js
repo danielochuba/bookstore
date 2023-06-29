@@ -1,13 +1,21 @@
-function BookCard() {
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/booksSlice';
+
+function BookCard({
+  title, author, id, category,
+}) {
+  const dispatch = useDispatch();
   return (
-    <div className="card">
+    <div className="card" id={id}>
       <div className="bookDescription">
-        <span className="bookType">Action</span>
-        <h2 className="bookTitle">The Hunger Games</h2>
-        <span className="bookAuthor">Suzzane Collins</span>
+        <span className="bookType">{category }</span>
+        <h2 className="bookTitle">{title}</h2>
+        <span className="bookAuthor">{author}</span>
         <div className="ctaButtons">
           <button type="button" className="btn comments">Coments</button>
-          <button type="button" className=" btn remove">Remove</button>
+          <button type="button" onClick={() => { dispatch(removeBook(id)); }} className=" btn remove">Remove</button>
           <button type="button" className=" btn edit">Edit</button>
         </div>
       </div>
