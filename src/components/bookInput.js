@@ -1,11 +1,18 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBooks } from '../redux/books/booksSlice';
 
 function BookForm() {
   const [name, setName] = useState('');
   const [author, setAuthor] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(addBooks({ title: name, author, item_id: uuidv4() }));
+    setName('');
+    setAuthor('');
   };
 
   return (
