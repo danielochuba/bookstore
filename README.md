@@ -54,7 +54,6 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running cloning this repo `https://github.com/danielochuba/bookstore`.
