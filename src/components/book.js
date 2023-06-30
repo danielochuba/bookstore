@@ -43,9 +43,9 @@ function BookCard({
         </span>
       </div>
       <div className="userProgress">
-        <span className="chapterText">CURRENT CHAPTER</span>
-        <span className="currentChapter">Chapter 17</span>
-        <button type="button" className="updtProgBtn">UPDATE PROGRESS</button>
+        <span className="chapterText robotoFont">CURRENT CHAPTER</span>
+        <span className="currentChapter robotoFont">Chapter 17</span>
+        <button type="button" className="updtProgBtn robotoFont">UPDATE PROGRESS</button>
       </div>
     </div>
   );

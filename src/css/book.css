@@ -1,20 +1,20 @@
+.robotoFont {
+  font-family: RobotoSlab, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .card {
   display: flex;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(255, 255, 255);
   padding: 15px;
   justify-content: space-between;
   align-items: center;
   width: 85%;
-  margin: 1rem auto 0.983rem auto;
+  margin: 1rem auto 0.983rem 5%;
   border-radius: 4px;
-  box-shadow: 0 0 2px 0;
+  box-shadow: 1px 1px 4px 1px rgb(225, 221, 221);
 }
 
-.bookType {
-  margin: 0;
-}
-
+.bookType,
 .bookTitle {
   margin: 0;
 }
@@ -37,10 +37,7 @@
   color: dodgerblue;
   padding: 0;
   margin-right: 0.938rem;
-}
-
-.bookCompletion {
-  display: flex;
+  cursor: pointer;
 }
 
 .circle-wrap {
@@ -101,7 +98,7 @@
 }
 
 .progressCount {
-  font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: Montserrat, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   font-size: 2rem;
 }
 
@@ -118,7 +115,6 @@
 
 .chapterText {
   opacity: 0.5;
-  font-family: RobotoSlab, droid sans, sans-serif;
   font-size: 0.8rem;
 }
 
@@ -127,16 +123,23 @@
   margin-top: 0.5rem;
   font-size: 1rem;
   color: #121212;
-  font-family: RobotoSlab, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.updtProgBtn,
+.bookCompletion {
+  margin-top: 1.275rem;
+}
+
+.bookCompletion {
+  display: flex;
+  flex-direction: row;
 }
 
 .updtProgBtn {
   background-color: dodgerblue;
   color: rgb(255, 255, 255);
   padding: 4px 8px;
-  font-family: RobotoSlab, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 0.8rem;
-  margin-top: 1.275rem;
   margin-right: 0.938rem;
   border: none;
 }
