@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBook } from '../redux/books/booksSlice';
 
 function BookCard({
   title, author, id, category,
@@ -10,12 +10,12 @@ function BookCard({
   return (
     <div className="card" id={id}>
       <div className="bookDescription">
-        <span className="bookType">{category }</span>
+        <span className="bookType">{ category }</span>
         <h2 className="bookTitle">{title}</h2>
         <span className="bookAuthor">{author}</span>
         <div className="ctaButtons">
           <button type="button" className="btn comments">Coments</button>
-          <button type="button" onClick={() => { dispatch(removeBook(id)); }} className=" btn remove">Remove</button>
+          <button type="button" onClick={() => { dispatch(deleteBook(id)); }} className=" btn remove">Remove</button>
           <button type="button" className=" btn edit">Edit</button>
         </div>
       </div>
@@ -35,5 +35,12 @@ function BookCard({
     </div>
   );
 }
+
+BookCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
 
 export default BookCard;

@@ -24,7 +24,6 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
-
     </div>
   );
 }
