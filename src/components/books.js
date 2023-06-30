@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import BookForm from './bookInput';
 import BookCard from './book';
 import { fetchBooks } from '../redux/books/booksSlice';
+import BookForm from './bookInput';
 
 const Home = () => {
   const dispatch = useDispatch();
   const books = useSelector((state) => state.book.books);
-  const status = useSelector((state) => state.book.status);
+  const status = useSelector((state) => state.book.state);
   const error = useSelector((state) => state.book.error);
   const loading = useSelector((state) => state.book.loading);
 
@@ -20,14 +20,29 @@ const Home = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return (
+      <>
+        <div>{error}</div>
+        <BookForm />
+      </>
+    );
   }
 
   if (status === 'succeeded' && books.length === 0) {
-    return <div>No books to display</div>;
+    return (
+      <>
+        <div>No books to display</div>
+        <BookForm />
+      </>
+    );
   }
-  if (status) {
-    return <div>Something went wrong</div>;
+  if (status && status !== 'succeeded') {
+    return (
+      <>
+        <div>{status}</div>
+        <BookForm />
+      </>
+    );
   }
 
   const mappedBooks = books.map((book) => (

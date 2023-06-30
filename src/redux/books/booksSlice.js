@@ -1,6 +1,5 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { v4 as uuid } from 'uuid';
 import ApiBooks from '../booksApI';
 
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
@@ -29,14 +28,13 @@ const booksSlice = createSlice({
     loading: false,
     books: [],
     error: '',
-    state: 'idle',
+    state: 'No books to display',
   },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
       state.loading = true;
-    });
-    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+    }).addCase(fetchBooks.fulfilled, (state, action) => {
       state.loading = false;
       state.books = Object.entries(action.payload).map(
         ([itemId, itemData]) => ({
@@ -45,27 +43,22 @@ const booksSlice = createSlice({
         }),
       );
       state.error = '';
-    });
-    builder.addCase(fetchBooks.rejected, (state, action) => {
+    }).addCase(fetchBooks.rejected, (state, action) => {
       state.loading = false;
       state.books = [];
       state.error = action.error.message;
-    });
-    builder.addCase(addBook.fulfilled, (state, action) => {
+    }).addCase(addBook.fulfilled, (state, action) => {
       state.state = 'succeeded';
       const book = {
-        item_id: uuid(),
         ...action.meta.arg,
       };
       state.books = [...state.books, book];
-    });
-    builder.addCase(deleteBook.fulfilled, (state, action) => {
-      state.state = 'succeeded';
-      state.books = state.books.filter((book) => book.item_id !== action.payload);
-    });
+    })
+      .addCase(deleteBook.fulfilled, (state, action) => {
+        state.books = state.books.filter((book) => book.item_id !== action.payload);
+        state.status = 'succeeded';
+      });
   },
 });
 
 export default booksSlice.reducer;
-
-export const { addBooks, removeBook } = booksSlice.actions;
