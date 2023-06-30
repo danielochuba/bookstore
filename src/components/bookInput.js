@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
+import '../css/bookInput.css';
 
 function BookForm() {
   const [name, setName] = useState('');
@@ -41,7 +42,7 @@ function BookForm() {
   };
 
   return (
-    <>
+    <section className="formSection">
 
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
@@ -64,7 +65,7 @@ function BookForm() {
 
         <button type="submit" onClick={handleSubmit}>ADD BOOK</button>
       </form>
-    </>
+    </section>
   );
 }
 
