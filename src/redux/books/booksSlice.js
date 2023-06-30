@@ -35,7 +35,7 @@ const booksSlice = createSlice({
     loading: false,
     books: [],
     error: '',
-    state: 'idle',
+    state: 'No books to display',
   },
   reducers: {},
   extraReducers: (builder) => {
