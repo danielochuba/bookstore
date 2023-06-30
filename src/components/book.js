@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/booksSlice';
 import '../css/book.css';
@@ -11,7 +11,7 @@ function BookCard({
   return (
     <div className="card" id={id}>
       <div className="bookDescription">
-        <span className="bookType">{category }</span>
+        <span className="bookType">{ category }</span>
         <h2 className="bookTitle">{title}</h2>
         <span className="bookAuthor">{author}</span>
         <div className="ctaButtons">
@@ -50,5 +50,12 @@ function BookCard({
     </div>
   );
 }
+
+BookCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  author: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
 
 export default BookCard;
