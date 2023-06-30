@@ -23,7 +23,19 @@ function BookCard({
         </div>
       </div>
       <div className="bookCompletion">
-        <span className="progressMeter">spinner</span>
+        <span className="progressMeter">
+          <div className="circle-wrap">
+            <div className="circle">
+              <div className="mask full">
+                <div className="fill" />
+              </div>
+              <div className="mask half">
+                <div className="fill" />
+              </div>
+              <div className="inside-circle"> </div>
+            </div>
+          </div>
+        </span>
         <span className="progressCount">
           64%
           {' '}
