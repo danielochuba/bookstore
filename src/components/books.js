@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React, { useEffect } from 'react';
-import BookForm from './bookInput';
 import BookCard from './book';
 import { fetchBooks } from '../redux/books/booksSlice';
 
@@ -42,7 +41,6 @@ const Home = () => {
   return (
     <>
       {mappedBooks}
-      <BookForm />
     </>
 
   );

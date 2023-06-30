@@ -27,10 +27,9 @@ function BookForm() {
     'Health',
   ];
 
-  const randomCategory = () => bookCategories[Math.floor(Math.random() * bookCategories.length)];
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    const randomCategory = () => bookCategories[Math.floor(Math.random() * bookCategories.length)];
     if (name.trim() && author.trim()) {
       dispatch(addBook({
         title: name, author, item_id: uuidv4(), category: randomCategory(),
