@@ -1,8 +1,14 @@
+
 .card {
-    display: flex;
-    border: 1px solid #ccc;
-    padding: 15px;
-    justify-content: space-between;
+  display: flex;
+  border: 1px solid #ccc;
+  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  width: 85%;
+  margin: 1rem auto 0.983rem auto;
+  border-radius: 4px;
+  box-shadow: 0 0 2px 0;
 }
 
 .bookType {
@@ -14,24 +20,123 @@
 }
 
 .bookAuthor {
- color: dodgerblue;
+  color: dodgerblue;
 }
 
 .ctaButtons {
-    display: flex;
-    column-gap: 9px;
-    align-items: baseline;
+  display: flex;
+  column-gap: 9px;
+  margin-top: 1.313rem;
+  align-items: baseline;
+  color: rgb(225, 225, 225);
 }
 
 .ctaButtons > .btn {
-    border: none;
-    background-color: aliceblue;
-    color: do
-    
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color: dodgerblue;
+  padding: 0;
+  margin-right: 0.938rem;
 }
 
-.progressCount, .userProgress {
-    display: flex;
-    flex-direction: column;
+.bookCompletion {
+  display: flex;
 }
 
+.circle-wrap {
+  width: 60px;
+  height: 60px;
+  background: #eae8ea;
+  border-radius: 50%;
+  border: 1px solid #cdcbd0;
+}
+
+.mask .fill {
+  clip: rect(0, 30px, 50px, 0);
+  background-color: #227ded;
+}
+
+.mask.full,
+.circle .fill {
+  animation: fill ease-in-out 3s;
+  transform: rotate(125deg);
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+  clip: rect(0, 60px, 60px, 30px);
+}
+
+.circle-wrap .inside-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 46px;
+  text-align: center;
+  margin-top: 6px;
+  margin-left: 6px;
+  color: #1e51dc;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 1.2em;
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+.progressCount {
+  font-family: 'Montserrat', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.complete {
+  opacity: 0.5 !important;
+  font-size: 0.875rem;
+}
+
+.progressCount,
+.userProgress {
+  display: flex;
+  flex-direction: column;
+}
+
+.chapterText {
+  opacity: 0.5;
+  font-family: RobotoSlab, droid sans, sans-serif;
+  font-size: 0.8rem;
+}
+
+.currentChapter {
+  margin: 0;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #121212;
+  font-family: RobotoSlab, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.updtProgBtn {
+  background-color: dodgerblue;
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  font-family: RobotoSlab, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 0.8rem;
+  margin-top: 1.275rem;
+  margin-right: 0.938rem;
+  border: none;
+}
