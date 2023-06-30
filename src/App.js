@@ -3,7 +3,6 @@ import Home from './components/books';
 import Categories from './components/categories';
 import './App.css';
 import styles from './css/layout.module.css';
-import BookForm from './components/bookInput';
 
 function Layout() {
   return (
@@ -25,7 +24,6 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
-      <BookForm />
     </div>
   );
 }
