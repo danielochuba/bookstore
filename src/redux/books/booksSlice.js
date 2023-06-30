@@ -3,13 +3,6 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { v4 as uuid } from 'uuid';
 import ApiBooks from '../booksApI';
 
-const initialState = {
-  loading: false,
-  books: [],
-  error: '',
-  state: 'idle',
-};
-
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await ApiBooks.get('/books');
   return response.data;
@@ -32,7 +25,12 @@ export const deleteBook = createAsyncThunk('books/deleteBook', async (id) => {
 
 const booksSlice = createSlice({
   name: 'books',
-  initialState,
+  initialState: {
+    loading: false,
+    books: [],
+    error: '',
+    state: 'idle',
+  },
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchBooks.pending, (state) => {
@@ -54,16 +52,15 @@ const booksSlice = createSlice({
       state.error = action.error.message;
     });
     builder.addCase(addBook.fulfilled, (state, action) => {
-      state.status = 'succeeded';
+      state.state = 'succeeded';
       const book = {
         item_id: uuid(),
         ...action.meta.arg,
       };
       state.books = [...state.books, book];
-      state.loading = true;
     });
     builder.addCase(deleteBook.fulfilled, (state, action) => {
-      state.status = 'succeeded';
+      state.state = 'succeeded';
       state.books = state.books.filter((book) => book.item_id !== action.payload);
     });
   },
