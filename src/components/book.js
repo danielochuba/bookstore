@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteBook } from '../redux/books/booksSlice';
+import '../css/book.css';
 
 function BookCard({
   title, author, id, category,
@@ -15,12 +16,26 @@ function BookCard({
         <span className="bookAuthor">{author}</span>
         <div className="ctaButtons">
           <button type="button" className="btn comments">Coments</button>
+          |
           <button type="button" onClick={() => { dispatch(deleteBook(id)); }} className=" btn remove">Remove</button>
+          |
           <button type="button" className=" btn edit">Edit</button>
         </div>
       </div>
       <div className="bookCompletion">
-        <span className="progressMeter">spinner</span>
+        <span className="progressMeter">
+          <div className="circle-wrap">
+            <div className="circle">
+              <div className="mask full">
+                <div className="fill" />
+              </div>
+              <div className="mask half">
+                <div className="fill" />
+              </div>
+              <div className="inside-circle"> </div>
+            </div>
+          </div>
+        </span>
         <span className="progressCount">
           64%
           {' '}
@@ -28,9 +43,9 @@ function BookCard({
         </span>
       </div>
       <div className="userProgress">
-        <span className="chapterText">CURRENT CHAPTER</span>
-        <span className="currentChapter">Chapter 17</span>
-        <button type="button" className="updtProgBtn">UPDATE PROGRESS</button>
+        <span className="chapterText robotoFont">CURRENT CHAPTER</span>
+        <span className="currentChapter robotoFont">Chapter 17</span>
+        <button type="button" className="updtProgBtn robotoFont">UPDATE PROGRESS</button>
       </div>
     </div>
   );

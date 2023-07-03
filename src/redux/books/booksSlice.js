@@ -2,13 +2,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import ApiBooks from '../booksApI';
 
-// const initialState = {
-//   loading: false,
-//   books: [],
-//   error: '',
-//   state: 'idle',
-// };
-
 export const fetchBooks = createAsyncThunk('books/fetchBooks', async () => {
   const response = await ApiBooks.get('/books');
   return response.data;

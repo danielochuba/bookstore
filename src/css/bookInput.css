@@ -1,0 +1,41 @@
+.robotoFont {
+  font-family: RobotoSlab, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.formSection {
+  margin: 2rem 0 0 5%;
+}
+
+.formSection > h2 {
+  font-weight: bold;
+  opacity: 0.5;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  column-gap: 7px;
+}
+
+form > input {
+  margin: 0.5rem 0;
+  width: 30%;
+  height: 1.9rem;
+  border-radius: 2px;
+  padding: 0 1rem;
+  font-size: 1rem;
+  border: 1px solid  #706f6f;
+}
+
+form > button {
+  background-color: dodgerblue;
+  color: rgb(255, 255, 255);
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  margin-right: 0.938rem;
+  border: none;
+  width: 20%;
+  height: 1.9rem;
+  cursor: pointer;
+}

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/booksSlice';
+import '../css/bookInput.css';
 
 function BookForm() {
   const [name, setName] = useState('');
@@ -40,7 +41,7 @@ function BookForm() {
   };
 
   return (
-    <>
+    <section className="formSection robotoFont">
 
       <h2>ADD NEW BOOK</h2>
       <form onSubmit={handleSubmit}>
@@ -48,6 +49,7 @@ function BookForm() {
         <input
           placeholder="Book title"
           type="text"
+          className="robotoFont"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -56,14 +58,15 @@ function BookForm() {
         <input
           placeholder="Book Author"
           type="text"
+          className="robotoFont"
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
           required
         />
 
-        <button type="submit" onClick={handleSubmit}>ADD BOOK</button>
+        <button type="submit" className="robotoFont" onClick={handleSubmit}>ADD BOOK</button>
       </form>
-    </>
+    </section>
   );
 }
 

@@ -1,7 +1,7 @@
 .appHeader {
   display: flex;
   align-items: center;
-  padding-left: 6.5rem;
+  padding-left: 5%;
   border-radius: 5px;
   border: 1px solid rgb(246, 234, 234);
   box-shadow: 0 4px 14px 0 rgba(70, 70, 70, 0.38);
