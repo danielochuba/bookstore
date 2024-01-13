@@ -18,7 +18,6 @@ const Home = () => {
   if (loading) {
     return <div>Loading...</div>;
   }
-
   if (error) {
     return (
       <>
@@ -28,14 +27,14 @@ const Home = () => {
     );
   }
 
-  if (status === 'succeeded' && books.length === 0) {
-    return (
-      <>
-        <div>No books to display</div>
-        <BookForm />
-      </>
-    );
-  }
+  // if (!loading && books.length === 0) {
+  //   return (
+  //     <>
+  //       <div>No books to display</div>
+  //       <BookForm />
+  //     </>
+  //   );
+  // }
   if (status && status !== 'succeeded') {
     return (
       <>
