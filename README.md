@@ -13,6 +13,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [Live link](#live)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -50,6 +51,9 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Page Structure]**
+
+### Live link <a name="live"></a>
+[Live Demo](https://book-store-xtik.onrender.com/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
